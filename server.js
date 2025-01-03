@@ -5,14 +5,14 @@ const hostname = 'localhost';
 const port = 3000;
 
 const requestHandler = (req, res) => { 
-    const parsedUrl = url.parse(req.url, true); 
-    const { pathname, query } = parsedUrl;  
+  const parsedUrl = url.parse(req.url, true); 
+  const { pathname, query } = parsedUrl;   
  
     res.setHeader('Content-Type', 'application/json');
  
     console.log('Requested Pathname:', pathname);
  
-    if (pathname.startsWith('/api/user') && req.method === 'GET') {
+    if (pathname.startsWith('/api/user') && req.method === 'POST') {
         console.log('Request method is GET for /api/user');
         const userId = query.id; 
         if (userId) {
